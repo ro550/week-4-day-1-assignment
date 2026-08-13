@@ -1,68 +1,91 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Component Exercises
 
 ## Overview
 
-A small starter repository for building React applications with Vite. This project is intended for learning and assignments: it gives a minimal, working development setup (dev server, hot module replacement, and build scripts) so you can focus on building React components and learning best practices.
+This project contains three React exercises built with Vite. 
 
 ## Technologies Used
 
-- JavaScript (React)
-- Vite (dev server & build tool)
-- ESLint (basic linting rules)
-- CSS for styling
-- HTML (single-page entry)
-
-Currently, two official plugins are available for React in Vite:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- JavaScript
+- React
+- JSX
+- Vite
+- CSS
+- ESLint
+- Node.js
+- npm
 
 ## Features
 
-- Fast development server with Hot Module Replacement (HMR)
-- Minimal, easy-to-understand project structure suitable for exercises and small apps
-- ESLint configuration to catch common issues early
-- Build scripts for creating production bundles with Vite
+### Task 1: Reusable React Components
 
-## Getting Started
+- `ProfileCard` displays an avatar, name, title, and location.
+- `StarRating` displays filled and empty stars based on a rating.
+- `PriceTag` displays a formatted price, currency, and optional discount.
+- `AlertBox` displays success, warning, or error messages.
+- `NavBar` displays a brand name and navigation links.
+- Components receive data through props.
+- Each component is stored in its own file inside `src/components/`.
+![React Components](image.png)
 
-Prerequisites:
+### Task 2: ProductCard
 
-- Node.js (recommended LTS)
-- npm or yarn
+- Displays a product image, name, price, and star rating.
+- Reuses the `StarRating` component from Task 1.
+- Formats prices with commas, such as `KES 4,500`.
+- Uses conditional rendering based on the `inStock` prop.
+- Displays an `Add to Cart` button for products that are in stock.
+- Displays a disabled `Unavailable` button for out-of-stock products.
+- Applies a grayscale filter to out-of-stock product images.
+- Displays an `Out of Stock` badge for unavailable products.
+- Renders multiple product cards using the same reusable component.
+![ProductCard Component](image-1.png)
 
-Install dependencies:
+### Task 3: TeamPage
 
-```bash
-npm install
-# or
-# yarn install
-```
+- `TeamPage` receives a `members` array through props.
+- `MemberCard` displays a member's avatar, name, role, and bio.
+- Uses `.map()` to render multiple team members dynamically.
+- Uses the spread operator (`{...member}`) to pass member properties as props.
+- Uses React's `key` prop when rendering a list.
+- Dynamically displays the total number of team members.
+- Includes six Kenyan team members as sample data.
+- Displays the members in a CSS grid.
+![TeamPage Component](image-2.png)
 
-Run the development server:
+## React Concepts Practiced
 
-```bash
-npm run dev
-```
+- Functional components
+- JSX
+- Props
+- Props destructuring
+- Component reuse
+- Conditional rendering
+- Ternary operators
+- Logical `&&` rendering
+- Inline styles
+- Arrays and objects
+- `.map()` for rendering lists
+- Spread operator
+- React `key` prop
+- Dynamic values using `.length`
+- CSS Grid
+- Component organization
 
-Build for production:
+## Project Structure
 
-```bash
-npm run build
-```
-
-Run the linter (if configured):
-
-```bash
-npm run lint
-```
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite#templates) for a TypeScript + ESLint setup.
+```text
+src/
+├── components/
+│   ├── ProfileCard.jsx
+│   ├── StarRating.jsx
+│   ├── PriceTag.jsx
+│   ├── AlertBox.jsx
+│   ├── NavBar.jsx
+│   ├── ProductCard.jsx
+│   ├── MemberCard.jsx
+│   └── TeamPage.jsx
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
